@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crystal Collector</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src = "assets/javascript/game.js"></script>
+</head>
+	<div class="container text-center">
+		<div>
+		<h1 class = "text-center"> Crystal Collector</h1>
+		</div>
+	</div> <!-- close title row -->
+
+	<div class="row panel default well">
+		<div class="col-md-8">
+			<div class="col-md-3">
+				<button id="red"><img src="assets/images/red-gem.png"></button>
+			</div>
+			<div class="col-md-3">
+				<button id="blue"><img src="assets/images/blue-gem.png"></button>
+			</div>
+			<div class="col-md-3">
+				<button id="green"><img src="assets/images/green-gem.png"></button>
+			</div>
+			<div class="col-md-3">
+				<button id="yellow"><img src="assets/images/yellow-gem.png"></button>
+			</div>
+		</div>
+
+		<div class="col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title text-center"> Crystal Score</h4>	
+				</div>
+				<div class="panel-body">
+					<h4 class = "text-center" id="crystalNum"></h4>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">MAGIC NUMBER</h4>
+				</div>
+				<div class="panel-body">
+					<h4 id="magicNum"></h4>
+				</div>
+			</div>
+		</div> <!-- end column of 4 -->
+
+		<div class="col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title text-center">Scoreboard</h4>	
+				</div>
+				<div class="panel-body">
+  				<p><span class="text-center large">Wins:<span id="winsCounter"></span></p>
+  				<p><span class="text-center large">Losses:<span id="lossesCounter"></span></p>
+  				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Instructions</h3>
+				</div>
+				<div class="panel-body">
+					<p class="text-center">You will be given a magic number at the start of each game.</p>
+					<p class="text-center">There are four crystals.  By clicking on the crystal you will add a specific amount to your total score. </p>
+					<p class="text-center">You win the game by matching your score to the magic number.  If your score goes over the magic number, you lose that round.</p>
+					<p class="text-center">The value of each crystal is hidden from you until you click on it.</p>
+					<p class="text-center">In each new round the magic number and the value of each crystal will change.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-8 text-center">
+  			<button id="reset" type="button" class="btn btn-default">Play Again</button>
+  		</div>
+
+
+
+			
+
+
+
+
