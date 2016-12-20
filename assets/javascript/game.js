@@ -1,52 +1,61 @@
+$(document).ready(function(){
+
 var game = {
     wins: 0,
     losses: 0
-};
+	};
+$("#winsCounter").html(game.wins);
+$("#lossesCounter").html(game.losses);
 
+function resetGame(){
+		console.log("resetting");
+		
+		
 
-var magicNumber = Math.floor((Math.random() * 120) + 19);
+var magicNumber = Math.floor((Math.random() * 101) + 19);
 console.log(magicNumber);
+$("#magicNum").html(magicNumber);
 
 var redCrystal = Math.floor((Math.random() * 12)+ 1);
-$("#red").attr(redCrystal);
+$("#red").attr("value", redCrystal);
 
 var blueCrystal = Math.floor((Math.random() * 12)+ 1);
-$("#blue").attr(blueCrystal);
+$("#blue").attr("value", blueCrystal);
 
 var greenCrystal = Math.floor((Math.random() * 12)+ 1);
-$("#green").attr(greenCrystal);
+$("#green").attr("value", greenCrystal);
 
 var yellowCrystal = Math.floor((Math.random() * 12)+ 1);
-$("#yellow").attr(yellowCrystal);
+$("#yellow").attr("value", yellowCrystal);
 
 var crystalNumber = 0;
-
-
-$(document).ready(function(){
-	$("#magicNum").html(magicNumber);
-	
-	$("#red").click(function(){
+$("#crystalNum").html(crystalNumber);
+		
+	$("#red").on("click", function(){
 	console.log(redCrystal);
 	crystalNumber = crystalNumber + redCrystal;
 	console.log(crystalNumber);
 	$("#crystalNum").html(crystalNumber);
 	if (crystalNumber === magicNumber){
 		console.log("WIN");
-		$("#winsCounter").html(game.wins);
-		alert("You Win!  You are the empress of crystals!");
-		resetGame();
+		game.wins++;
+		setTimeout(function(){
+			alert("You Win!  You are the empress of crystals!");
+			resetGame();	
+		}, 50)
 	}
 
 	if (crystalNumber > magicNumber){
 		console.log("LOSE");
 		game.losses++;
-		$("#lossesCounter").html(game.losses);
-		alert("You lose.  All your crystals are now mine!");
-		resetGame();
+		setTimeout(function(){
+			alert("You lose.  All your crystals are now mine!");
+			resetGame();	
+		}, 50)
 	}
 	});
 	
-	$("#blue").click(function(){
+	$("#blue").on("click", function(){
 	console.log(blueCrystal);
 	crystalNumber = crystalNumber + blueCrystal;
 	console.log(crystalNumber)
@@ -54,21 +63,23 @@ $(document).ready(function(){
 	if (crystalNumber === magicNumber){
 		console.log("WIN");
 		game.wins++;
-		$("#winsCounter").html(game.wins);
-		alert("You Win!  You are a crystal master!");
-		resetGame();
+		setTimeout(function(){
+			alert("You Win!  You are a crystal master!");
+			resetGame();	
+		}, 50)
 	}
 
 	if (crystalNumber > magicNumber){
 		console.log("LOSE");
 		game.losses++;
-		$("#lossesCounter").html(game.losses);
-		alert("You lose.  You can try again. But try harder!");
-		resetGame();
+		setTimeout(function(){
+			alert("You lose.  You can try again. But try harder!");
+			resetGame();	
+		}, 50)
 	}
 	});
 
-	$("#green").click(function(){
+	$("#green").on("click", function(){
 	console.log(greenCrystal);
 	crystalNumber = crystalNumber + greenCrystal;
 	console.log(crystalNumber);
@@ -76,61 +87,62 @@ $(document).ready(function(){
 	if (crystalNumber === magicNumber){
 		console.log("WIN");
 		game.wins++;
-		$("#winsCounter").html(game.wins);
-		alert("You Win!  You are a crystal magician!");
-		resetGame();
+		setTimeout(function(){
+			alert("You Win!  You are a crystal magician!");
+			resetGame();	
+		}, 50)	
 	}
 
 	if (crystalNumber > magicNumber){
 		console.log("LOSE");
 		game.losses++;
-		$("#lossesCounter").html(game.losses);
-		alert("You lose.  I will take all the crystals!");
-		resetGame();
+		setTimeout(function(){
+			alert("You lose.  Say goodbye to your precious crystals!");
+			resetGame();	
+		}, 50)		
 	}
 	});
 
-	$("#yellow").click(function(){
+	$("#yellow").on("click", function(){
 	console.log(yellowCrystal);
 	crystalNumber = crystalNumber + yellowCrystal;
 	console.log(crystalNumber);
 	$("#crystalNum").html(crystalNumber);
 	if (crystalNumber === magicNumber){
 		console.log("WIN");
-		game.wins++
-		$("#winsCounter").html(game.wins);
-		alert("You Win!  You are a crystal wizard!");
-		resetGame();
+		game.wins++;
+		setTimeout(function(){
+			alert("You Win!  You are a crystal wizard!");
+			resetGame();	
+		}, 50)
 	}
 
 	if (crystalNumber > magicNumber){
-		console.log("LOSE");
-		game.losses++
 		$("#lossesCounter").html(game.losses);
-		alert("You lose.  Say goodbye to your precious crystals!");
-		resetGame();
+		console.log("LOSE");
+		game.losses++;
+		setTimeout(function(){
+			alert("You lose.  Say goodbye to your precious crystals!");
+			resetGame();	
+		}, 50)
+		
 	}
 	});
 
-	$("#reset").click(function(){
+};	
+
+	$("#reset").on("click", function(){
 		console.log('reset');
 		resetGame();	
 	});
+
+
+resetGame();
+
+	
+
+
 });
-
-function resetGame(){
-	console.log("resetting");
-	crystalNumber = 0;
-	$("#crystalNum").html(crystalNumber);
-	var magicNumber = Math.floor((Math.random() * 120) + 19);
-	console.log(magicNumber);
-	$("#magicNum").html(magicNumber);
-	var redCrystal = Math.floor((Math.random() * 12)+ 1);
-	console.log(redCrystal);
-	// $("#red").attr(redCrystal);
-}
-
-
 
 
 
